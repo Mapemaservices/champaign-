@@ -251,10 +251,10 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <span className="text-champagne/90 font-light hidden md:block">Welcome, {profile?.full_name}</span>
-            <Button variant="gold" size="sm" onClick={handleSignOut} className="flex items-center gap-1">
-              <LogOut className="h-4 w-4" />
-              <span>Sign Out</span>
+            <span className="text-gold font-bold">Welcome, {profile?.full_name}</span>
+            <Button variant="gold" size="sm" onClick={handleSignOut} className="flex items-center gap-1 text-gold">
+              <LogOut className="h-4 w-4 text-gold" />
+              <span className="text-gold font-bold">Sign Out</span>
             </Button>
           </div>
         </div>
