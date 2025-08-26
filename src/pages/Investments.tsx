@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useSuperCache } from "@/hooks/useSuperCache";
 
 const staticPackages = [
+  { name: "Beginer", returns_percentage: 8, duration_months: 3, price: 20 },
   { name: "Bronze", returns_percentage: 15, duration_months: 6, price: 100 },
   { name: "Silver", returns_percentage: 25, duration_months: 12, price: 500 },
   { name: "Gold", returns_percentage: 40, duration_months: 18, price: 1000 },
