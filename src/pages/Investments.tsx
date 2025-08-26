@@ -7,11 +7,11 @@ import { useToast } from "@/hooks/use-toast";
 import { useSuperCache } from "@/hooks/useSuperCache";
 
 const staticPackages = [
-  { name: "Beginer", returns_percentage: 8, duration_months: 3, price: 20 },
-  { name: "Bronze", returns_percentage: 15, duration_months: 6, price: 100 },
-  { name: "Silver", returns_percentage: 25, duration_months: 12, price: 500 },
-  { name: "Gold", returns_percentage: 40, duration_months: 18, price: 1000 },
-  { name: "Platinum", returns_percentage: 60, duration_months: 24, price: 5000 }
+  { name: "Beginer", returns_percentage: 8, duration_weeks: 12, price: 20 },
+  { name: "Bronze", returns_percentage: 15, duration_weeks: 24, price: 100 },
+  { name: "Silver", returns_percentage: 25, duration_weeks: 48, price: 500 },
+  { name: "Gold", returns_percentage: 40, duration_weeks: 72, price: 1000 },
+  { name: "Platinum", returns_percentage: 60, duration_weeks: 96, price: 5000 }
 ];
 
 const Investments = () => {
@@ -223,7 +223,7 @@ const Investments = () => {
                                 </div>
                                 <div className="flex justify-between">
                                   <span className={textColor}>Duration:</span>
-                                  <span className={`font-semibold ${textColor}`}>{pkg.duration_months} months</span>
+                                  <span className={`font-semibold ${textColor}`}>{pkg.duration_weeks || pkg.duration_months} weeks</span>
                                 </div>
                               </div>
                             </div>
@@ -298,7 +298,7 @@ const Investments = () => {
                                 </span>
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap">
-                                {inv.investment_packages?.duration_months} months
+                                {inv.investment_packages?.duration_weeks || inv.investment_packages?.duration_months} weeks
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap">
                                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${inv.status === 'active' ? 'bg-emerald-900/30 text-emerald-400' : 'bg-blue-900/30 text-blue-400'}`}>
