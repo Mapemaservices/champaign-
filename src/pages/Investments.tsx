@@ -262,9 +262,9 @@ const Investments = () => {
       toast({
         title: 'Add Funds Required',
         description: 'You need to deposit funds before you can complete tasks.',
-        variant: 'destructive',
+        variant: 'warning',
         action: (
-          <Button variant="outline" onClick={() => navigate('/deposit')}>Deposit Now</Button>
+          <Button style={{ background: '#FFD600', color: '#222', border: 'none' }} onClick={() => navigate('/deposit')}>Deposit Now</Button>
         )
       });
       return;
@@ -506,9 +506,9 @@ const Investments = () => {
                                             toast({
                                               title: 'Add Funds Required',
                                               description: 'You need to deposit funds before you can complete tasks.',
-                                              variant: 'destructive',
+                                              variant: 'warning',
                                               action: (
-                                                <Button variant="outline" onClick={() => navigate('/deposit')}>Deposit Now</Button>
+                                                <Button style={{ background: '#FFD600', color: '#222', border: 'none' }} onClick={() => navigate('/deposit')}>Deposit Now</Button>
                                               )
                                             });
                                             return;
@@ -528,9 +528,9 @@ const Investments = () => {
                                             toast({
                                               title: 'Add Funds Required',
                                               description: 'You need to deposit funds before you can complete tasks.',
-                                              variant: 'destructive',
+                                              variant: 'warning',
                                               action: (
-                                                <Button variant="outline" onClick={() => navigate('/deposit')}>Deposit Now</Button>
+                                                <Button style={{ background: '#FFD600', color: '#222', border: 'none' }} onClick={() => navigate('/deposit')}>Deposit Now</Button>
                                               )
                                             });
                                             return;
