@@ -236,15 +236,16 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-champagne/5 via-burgundy/5 to-gold/5">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-burgundy/90 to-burgundy-dark/90 backdrop-blur-md border-b border-gold/20 text-white shadow-lg">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="relative">
-              <Wine className="h-10 w-10 text-gold" />
-              <Sparkles className="h-4 w-4 text-gold absolute -top-1 -right-1" />
-            </div>
+    <>
+      <div className="min-h-screen bg-gradient-to-br from-champagne/5 via-burgundy/5 to-gold/5">
+        {/* Header */}
+        <header className="bg-gradient-to-r from-burgundy/90 to-burgundy-dark/90 backdrop-blur-md border-b border-gold/20 text-white shadow-lg">
+          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <Wine className="h-10 w-10 text-gold" />
+                <Sparkles className="h-4 w-4 text-gold absolute -top-1 -right-1" />
+              </div>
             <div>
               <h1 className="text-2xl font-serif font-bold text-gold">Champagne Vault</h1>
               <p className="text-sm text-champagne/80 font-light">Premium Investments</p>
@@ -474,7 +475,8 @@ const Dashboard = () => {
         
         :global(.bg-gradient-gold) { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 

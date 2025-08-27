@@ -4,9 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Wine, TrendingUp, Shield, Award, Users, Star, ChevronRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+
 import { useToast } from "@/hooks/use-toast";
+
 import { useSuperCache } from "@/hooks/useSuperCache";
+
 
 const Index = () => {
   const navigate = useNavigate();
@@ -107,7 +109,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0F0F0F] via-[#1A1A1A] to-[#2A2A2A] text-white overflow-hidden">
+    <>
+      <div className="min-h-screen bg-gradient-to-br from-[#0F0F0F] via-[#1A1A1A] to-[#2A2A2A] text-white overflow-hidden">
       {/* Animated background elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -222,11 +225,11 @@ const Index = () => {
             )}
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
             {packages.map((pkg, index) => (
               <Card 
                 key={pkg.name || pkg.id || index} 
-                className="border-gold/20 bg-black/30 backdrop-blur-md hover:border-gold/40 transition-all duration-500 hover:scale-105 group overflow-hidden relative"
+                className="border-gold/20 bg-black/30 backdrop-blur-md hover:border-gold/40 transition-all duration-500 hover:scale-105 group overflow-hidden relative flex flex-col h-full"
               >
                 {index === 3 && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
@@ -235,30 +238,26 @@ const Index = () => {
                     </Badge>
                   </div>
                 )}
-                
                 <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <CardHeader className="text-center relative z-10 pt-8">
+                <CardHeader className="text-center relative z-10 pt-8 flex flex-col items-center justify-center">
                   <CardTitle className="text-2xl text-gold">{pkg.name}</CardTitle>
                   <div className="text-4xl font-bold mt-4 bg-gradient-to-r from-gold to-champagne bg-clip-text text-transparent">
                     ${pkg.price?.toLocaleString?.() || pkg.price}
                   </div>
                 </CardHeader>
-                
-                <CardContent className="text-center space-y-6 relative z-10 pb-8">
+                <CardContent className="text-center space-y-6 relative z-10 pb-8 flex-1 flex flex-col justify-between">
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center py-2 border-b border-gold/10">
+                    <div className="flex flex-col sm:flex-row justify-between items-center py-2 border-b border-gold/10 gap-2">
                       <span className="text-gray-400">Returns:</span>
                       <span className="font-bold text-gold">{pkg.returns_percentage}%</span>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gold/10">
+                    <div className="flex flex-col sm:flex-row justify-between items-center py-2 border-b border-gold/10 gap-2">
                       <span className="text-gray-400">Duration:</span>
                       <span className="font-bold text-gold">{pkg.duration_months} months</span>
                     </div>
                   </div>
-                  
                   <Button 
-                    className="w-full bg-gradient-to-r from-gold to-champagne hover:from-champagne hover:to-gold text-black font-bold py-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold/20"
+                    className="w-full bg-gradient-to-r from-gold to-champagne hover:from-champagne hover:to-gold text-black font-bold py-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 mt-6"
                     onClick={() => handleInvest(pkg)}
                   >
                     {!userId ? "Choose This Package" : (balance < pkg.price ? "Insufficient Balance" : "Invest Now")}
@@ -362,6 +361,7 @@ const Index = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 

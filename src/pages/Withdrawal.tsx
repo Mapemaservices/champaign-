@@ -5,7 +5,9 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+
 import { useSuperCache } from "@/hooks/useSuperCache";
+
 
 const Withdrawal = () => {
   const [amount, setAmount] = useState("");
@@ -120,7 +122,8 @@ const Withdrawal = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white py-8 px-4">
+    <>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white py-8 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header Section */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
@@ -400,7 +403,8 @@ const Withdrawal = () => {
           Withdrawals are only possible if you have sufficient balance. For help, contact <a href="mailto:support@champagnevault.com" className="text-purple-400 hover:underline">support@champagnevault.com</a>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
