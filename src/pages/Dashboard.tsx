@@ -262,14 +262,7 @@ const Dashboard = () => {
       </header>
 
       <div className="container mx-auto px-4 py-8 space-y-8">
-        {/* Investments Button */}
-        <div className="flex justify-end">
-          <Button onClick={() => navigate('/investments')} variant="gold" className="rounded-full px-6 py-5 flex items-center gap-2 shadow-lg hover:shadow-gold/20 transition-all">
-            <Wine className="w-5 h-5" /> 
-            <span>Explore Investments</span>
-            <ChevronRight className="w-4 h-4" />
-          </Button>
-        </div>
+
         
         {/* Balance Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -334,6 +327,11 @@ const Dashboard = () => {
             <Button variant="outline" onClick={() => navigate("/withdrawal")} className="flex items-center gap-2 rounded-full px-6 border-burgundy/30 text-burgundy hover:bg-burgundy/5">  
               <ArrowDownLeft className="h-5 w-5" />
               Request Withdrawal
+            </Button>
+            <Button onClick={() => navigate('/investments')} variant="gold" className="flex items-center gap-2 rounded-full px-6 py-3 shadow-lg hover:shadow-gold/20 transition-all">
+              <Wine className="w-5 h-5" />
+              <span>Explore Investments</span>
+              <ChevronRight className="w-4 h-4" />
             </Button>
             {profile?.is_admin && (
               <Button variant="secondary" onClick={() => navigate("/admin")} className="rounded-full px-6 bg-burgundy/10 text-burgundy hover:bg-burgundy/20">
